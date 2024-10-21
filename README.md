@@ -1,5 +1,4 @@
 
-
 # Tarefas App
 
 Este projeto é uma aplicação Django para gerenciar tarefas.
@@ -8,16 +7,21 @@ Este projeto é uma aplicação Django para gerenciar tarefas.
 
 ### 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd nome-do-repositorio
+git clone https://github.com/Uenderson-Mendes/Gtarefas.git
+cd Gtarefas
 ```
 
-### 2. Crie o ambiente virtual:
+### 2. Instale o `virtualenv` (caso não tenha instalado):
+```bash
+pip install virtualenv
+```
+
+### 3. Crie o ambiente virtual:
 ```bash
 virtualenv venv
 ```
 
-### 3. Ative o ambiente virtual:
+### 4. Ative o ambiente virtual:
 
 #### Linux/MacOS:
 ```bash
@@ -29,27 +33,27 @@ source venv/bin/activate
 venv\Scripts\activate
 ```
 
-### 4. Instale as dependências:
+### 5. Instale o Django e outras dependências:
 ```bash
-pip install -r requirements.txt
+pip install django
+
 ```
 
-### 5. Execute as migrações:
+### 6. Execute as migrações:
 ```bash
 python manage.py makemigrations tarefas
 python manage.py migrate
 ```
 
-### 6. Crie um superusuário (opcional):
+### 7. Crie um superusuário (opcional):
 ```bash
 python manage.py createsuperuser
 ```
 
-### 7. Inicie o servidor:
+### 8. Inicie o servidor:
 ```bash
 python manage.py runserver
 ```
 
 Acesse o app em `http://127.0.0.1:8000/`.
-
 
