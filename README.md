@@ -1,7 +1,8 @@
-Aqui está o conteúdo em formato Markdown para o arquivo `README.md`:
 
-```md
-# Django App - Nome do Projeto
+
+# Tarefas App
+
+Este projeto é uma aplicação Django para gerenciar tarefas.
 
 ## Configuração do Ambiente
 
@@ -11,28 +12,40 @@ git clone https://github.com/seu-usuario/seu-repositorio.git
 cd nome-do-repositorio
 ```
 
-### 2. Crie e ative um ambiente virtual:
+### 2. Crie o ambiente virtual:
 ```bash
-# Linux/MacOS
 virtualenv venv
-source venv/bin/activate
+```
 
-# Windows
-virtualenv venv
+### 3. Ative o ambiente virtual:
+
+#### Linux/MacOS:
+```bash
+source venv/bin/activate
+```
+
+#### Windows:
+```bash
 venv\Scripts\activate
 ```
 
+### 4. Instale as dependências:
+```bash
+pip install -r requirements.txt
+```
 
-###  Execute as migrações:
+### 5. Execute as migrações:
 ```bash
 python manage.py makemigrations tarefas
 python manage.py migrate
 ```
-## Crie um superusuário (opcional):
+
+### 6. Crie um superusuário (opcional):
 ```bash
 python manage.py createsuperuser
 ```
-###  Inicie o servidor:
+
+### 7. Inicie o servidor:
 ```bash
 python manage.py runserver
 ```
@@ -40,6 +53,3 @@ python manage.py runserver
 Acesse o app em `http://127.0.0.1:8000/`.
 
 
-```
-
-Esse arquivo está pronto para ser salvo como `README.md` e colocado no seu repositório.
