@@ -1,0 +1,162 @@
+.navbar {
+    position: fixed;       /* Torna a navbar fixa no topo */
+    top: 0;                /* Alinha a navbar ao topo da página */
+    left: 0;               /* Alinha a navbar à esquerda da página */
+    width: 100vw;          /* Faz a navbar ocupar toda a largura da janela de visualização */
+    z-index: 1000;         /* Garante que a navbar fique acima de outros elementos */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #454242;
+    margin-bottom: 150px;   /* Espaçamento abaixo da navbar */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Ajuste o espaçamento entre os itens */
+}
+
+.nav-item {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-item:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.add-button {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #007bff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: #0056b3;
+}
+
+.plus-icon {
+    font-size: 24px;
+    margin-right: 5px;
+}
+#titulo_logo{
+    color: #ffffff;
+    font-size: 16px;
+    margin-left: 5px;
+
+}
+.navbar {
+    position: fixed;       /* Torna a navbar fixa no topo */
+    top: 0;                /* Alinha a navbar ao topo da página */
+    left: 0;               /* Alinha a navbar à esquerda da página */
+    width: 100vw;          /* Faz a navbar ocupar toda a largura da janela de visualização */
+    z-index: 1000;         /* Garante que a navbar fique acima de outros elementos */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #4e4d4d;
+    margin-bottom: 150px;   /* Espaçamento abaixo da navbar */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Muda o layout para empilhar os itens verticalmente */
+        padding: 10px 20px;
+    }
+
+    .nav-left, .nav-right {
+        width: 100%; /* Itens ocupam a largura completa */
+        justify-content: center;
+        margin-bottom: 10px; /* Espaçamento entre os itens */
+    }
+
+    .logo {
+        height: 50px; /* Reduz o tamanho do logo */
+    }
+
+    .nav-item {
+        font-size: 16px; /* Reduz o tamanho da fonte dos itens da navbar */
+        padding: 5px 8px;
+    }
+
+    .add-button {
+        font-size: 16px;
+        padding: 5px 8px;
+    }
+
+    .plus-icon {
+        font-size: 20px; /* Ajusta o ícone para telas menores */
+    }
+
+    #titulo_logo {
+        font-size: 14px; /* Diminui o tamanho da fonte do título do logo */
+    }
+}
+
+/* Ajuste para telas muito pequenas (mobile) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 8px 15px; /* Reduz ainda mais o padding */
+    }
+
+    .nav-item {
+        font-size: 14px; /* Reduz o tamanho da fonte */
+        padding: 4px 6px;
+    }
+
+    .add-button {
+        font-size: 14px;
+        padding: 4px 6px;
+    }
+
+    .logo {
+        height: 40px; /* Diminui o logo */
+    }
+
+    .plus-icon {
+        font-size: 18px;
+    }
+
+    #titulo_logo {
+        font-size: 12px; /* Tamanho menor para o título */
+    }
+}
+.logout-button {
+    color: white; /* Cor do texto */
+    background-color: red; /* Cor de fundo */
+    padding: 10px 15px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    text-decoration: none; /* Sem sublinhado */
+}
+
+.logout-button:hover {
+    background-color: darkred; /* Cor de fundo ao passar o mouse */
+}

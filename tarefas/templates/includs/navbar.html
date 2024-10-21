@@ -1,0 +1,26 @@
+{% load static %}
+
+<nav class="navbar">
+    <div class="nav-left">
+        <img src="{% static 'img/logo1.png' %}" alt="Logo" class="logo">  <h4 id="titulo_logo">  Tarefas</h4>    
+    </div>
+    <div class="nav-right">
+        <a href="{% url 'lista_tarefas' %}" class="nav-item">Home</a>
+        <a href="{% url 'adicionar' %}" class="add-button">
+            <span class="plus-icon">+</span> Adicionar
+        </a>
+        
+       
+              <!-- Exibe o botão apenas para superusuários -->
+              {% if request.user.is_superuser %}
+              <a class="add-button" href="{% url 'add_usuario' %}" class="nav-item"><span class="plus-icon">+</span>  Adicionar Usuário</a>
+              <a class="add-button" href="{% url 'detalhes_usuarios' %}">Detalhes dos Usuários</a>
+              {% endif %}
+
+
+              {% if request.user.is_superuser %}
+              <a class="add-button" href="{% url 'adicionar_tarefa' %}" class="nav-item">Adicionar Tarefa</a> <!-- Link para adicionar tarefa -->
+          {% endif %}
+              <a  href="{% url 'logout' %}" class="nav-item logout-button"> sair</a>
+    </div>
+</nav>

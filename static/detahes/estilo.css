@@ -1,0 +1,108 @@
+/* Espaçamento entre a navbar e o conteúdo principal */
+.main-content {
+    margin-top: 60px;
+    padding: 20px;
+}
+
+/* Estilo para o título */
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Tabela estilo geral */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+/* Estilo para os headers da tabela */
+.table-header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+/* Estilo específico para o cabeçalho */
+thead {
+    display: table-header-group;  /* Garante que os headers da tabela sejam exibidos corretamente */
+}
+
+thead th {
+    display: table-cell;  /* Faz os headers ficarem em linha com as colunas */
+}
+
+/* Alternância de cor das linhas da tabela */
+.table-row:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table-row:hover {
+    background-color: #e0e0e0;
+}
+
+/* Exibição em linha para as células da tabela */
+.table-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Definir o tamanho das colunas */
+.user-name, .user-cpf, .task-list, .actions {
+    flex: 1;
+    text-align: left;
+    padding: 12px 15px;
+}
+
+/* Estilo para as ações */
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Estilo para os links e botões */
+.edit-link {
+    color: #3498db;
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.edit-link:hover {
+    text-decoration: underline;
+}
+
+.delete-form {
+    display: inline;
+}
+
+.delete-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+}
+
+/* Estilo para a lista de tarefas */
+.task-list ul {
+    padding-left: 20px;
+}
+
+.task-item {
+    margin-bottom: 5px;
+}

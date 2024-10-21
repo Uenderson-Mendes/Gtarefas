@@ -1,0 +1,34 @@
+<!-- templates/editar_usuario.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Editar Usuário</title>
+</head>
+<body>
+    <h1>Editar Usuário: {{ usuario.nome_user }}</h1>
+
+    <!-- Exibir o formulário do usuário -->
+    <h2>Editar Informações do Usuário</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ usuario_form.as_p }}  <!-- Exibir os campos do usuário -->
+        
+        <h2>Tarefas Associadas</h2>
+        {% for tarefa_form in tarefa_forms %}
+            <div>
+                {{ tarefa_form.as_p }}
+                <!-- Link para editar tarefa específica -->
+                <a href="{% url 'editar_tarefa' tarefa_form.instance.id %}">Editar esta tarefa</a>
+            </div>
+        {% endfor %}
+        
+        <button type="submit">Salvar Alterações</button>
+    </form>
+
+    <a href="{% url 'detalhes_usuarios' %}">Voltar para Detalhes dos Usuários</a>
+</body>
+</html>

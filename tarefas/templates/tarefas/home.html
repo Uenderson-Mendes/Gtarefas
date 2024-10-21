@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'home_list/style.css' %}">
+    <link rel="stylesheet" href="{% static 'nav/nav.css' %}">
+    <title>Tarefas</title>
+    <link rel="icon" href="{% static 'img/logo1.png' %}" type="image/x-icon">
+</head>
+<body>
+    {% include 'includs/navbar.html' %}
+    <h3>Lista de Tarefas e Responsáveis</h3>
+    <div class="corpo">
+    <div class="flex-container">
+        {% if cadastro_tarefas %}
+            {% for cadastro_tarefa in cadastro_tarefas %}
+                <a class="card_but" href="{% url 'detalhar' cadastro_tarefa.id %}">
+                    <div class="card"> 
+                        <div class="titulo-status">
+                            <h3 id="titulo" class="titulo">{{ cadastro_tarefa.titulo_tarefa }}</h3>
+                            <span class="{% if cadastro_tarefa.status == 'Pendente' %}status-pendente{% elif cadastro_tarefa.status == 'Aberta' %}status-aberta{% elif cadastro_tarefa.status == 'Executada' %}status-executada{% endif %}">
+                                : {{ cadastro_tarefa.status }}
+                            </span>
+                        </div>
+                        <p>Responsável: {{ cadastro_tarefa.responsavel }}</p>
+                        <p>Data de Registro: {{ cadastro_tarefa.datadoregistro }}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        {% else %}
+            <p>Não há tarefas disponíveis.</p>
+        {% endif %}
+    </div>
+</div>
+    
+</body>
+</html>

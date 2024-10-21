@@ -1,0 +1,290 @@
+body {
+    background-color: #d8d8d8f5;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Evita rolagem horizontal */
+}
+
+.flex-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Itens podem quebrar linha se necessário */
+    gap: 12px; /* Espaço entre os cards */
+    margin: 100px 0 20px 0; /* Margem no topo e embaixo */
+    justify-content: center; /* Centraliza os cards */
+    padding: 0 10px; /* Adiciona espaçamento lateral */
+}
+
+.card {
+    background-color: #f3f3f3e6; /* Cor de fundo do card */
+    border: 1px solid #aaaaaa; /* Borda do card */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 10px; /* Espaçamento interno do card */
+    flex: 1 1 210px; /* O card crescerá e encolherá conforme necessário */
+    min-width: 280px; /* Largura mínima do card */
+    max-width: 305px; /* Largura máxima do card */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra do card */
+    transition: background-color 0.3s, border 0.3s; /* Transição suave no hover */
+}
+
+.card:hover {
+    background-color: #cacaca; /* Muda a cor do card no hover */
+    border-color: #c1bdbd; /* Muda a borda no hover */
+}
+
+.butao_detalhe {
+    margin: 100px 50px;
+    background-color: #007bff;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.card h3 {
+    margin: 0; /* Remove a margem do título */
+    font-size: 1.2em; /* Ajusta o tamanho da fonte do título */
+}
+
+#titulo {
+    color: rgb(0, 0, 0);
+    font-style: oblique;
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+
+.responsavel {
+    font-weight: normal; /* Deixa o nome do responsável em um peso de fonte normal */
+    color: #000000; /* Cor do texto para o nome do responsável */
+}
+
+
+/*-------------------------------------*/
+#titulo{
+    color: rgb(0, 0, 0);
+    font-style:oblique;
+    margin-left: 0px;
+    margin-right: 10px;
+
+}
+  .titulo {
+            margin-right: 10px; /* Espaço entre o título e o status */
+     } 
+           .titulo-status {
+            display: flex; /* Usar flexbox para alinhar itens na mesma linha */
+            align-items: center; /* Centralizar verticalmente */
+        }
+
+        .status-pendente {
+            color: red; /* Cor vermelha para pendente */
+            font-weight: bold; /* Torna o texto mais grosso */
+        }
+        
+        .status-aberta {
+            color: blue; /* Cor azul para aberta */
+            font-weight: bold; /* Torna o texto mais grosso */
+        }
+        
+        .status-executada {
+            color: green; /* Cor verde para executada */
+            font-weight: bold; /* Torna o texto mais grosso */
+        }
+        
+    .card_but{
+        text-decoration: none;
+        cursor: pointer;
+        list-style: none;
+        color: inherit;
+        margin-right: 10px;
+
+    }.card:hover{
+        background-color: #cacaca; /* Cor de fundo do card */
+        border: 1px solid #c1bdbd;
+  
+    }
+
+     body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        #titulo_logo {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        form button:hover {
+            background-color: #218838;
+        }
+
+        .info-section {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .info-section img {
+            width: 80px;
+            margin: 10px;
+        }
+
+        .info-section p {
+            font-size: 16px;
+            color: #555;
+        }
+
+
+
+
+        /* Espaçamento entre a navbar e o conteúdo principal */
+.main-content {
+    margin-top: 60px;
+    padding: 20px;
+}
+
+/* Estilo para o título */
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Tabela estilo geral */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+/* Estilo para os headers da tabela */
+.table-header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+/* Alternância de cor das linhas da tabela */
+.table-row:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table-row:hover {
+    background-color: #e0e0e0;
+}
+
+/* Exibição em linha para a tabela */
+.table-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Definir o tamanho das colunas */
+.user-name, .user-cpf, .task-list, .actions {
+    flex: 1;
+    text-align: left;
+    padding: 12px 15px;
+}
+
+/* Estilo para as ações */
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Estilo para os links e botões */
+.edit-link {
+    color: #3498db;
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.edit-link:hover {
+    text-decoration: underline;
+}
+
+.delete-form {
+    display: inline;
+}
+
+.delete-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+}
+
+/* Estilo para a lista de tarefas */
+.task-list ul {
+    padding-left: 20px;
+}
+
+.task-item {
+    margin-bottom: 5px;
+}
+
+

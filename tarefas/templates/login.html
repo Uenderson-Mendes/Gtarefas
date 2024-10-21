@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'login/style.css' %}"
+    <title>Tarefas</title>
+    <link rel="icon" href="{% static 'img/logo1.png' %}" type="image/x-icon">
+</head>
+<body>
+    <div class="login-container">
+        <!-- Logo e título -->
+        <img src="{% static 'img/logo1.png' %}" alt="Logo" class="logo">
+        <h4 id="titulo_logo">Bem-vindo ao Sistema de Tarefas</h4>
+
+        <!-- Formulário de login -->
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <!-- Seção de informações com texto e imagens -->
+    <div class="info-section">
+        <p>Gerencie suas tarefas de maneira eficiente e organizada.</p>
+        <p>Faça login para acessar o seu painel e controlar suas atividades.</p>
+        
+        <div>
+            <img src="https://thumbs.dreamstime.com/b/ilustra%C3%A7%C3%A3o-do-rel%C3%B3gio-tempo-de-passagem-uma-variedade-rel%C3%B3gios-antigos-para-novos-274483940.jpg" 
+         alt="Ilustração do Relógio" 
+         style="width: 300px; height: auto;">
+         <img src="https://thumbs.dreamstime.com/b/ilustra%C3%A7%C3%A3o-do-rel%C3%B3gio-tempo-de-passagem-uma-variedade-rel%C3%B3gios-antigos-para-novos-274483970.jpg" 
+         alt="Ilustração de Relógios Antigos e Novos" 
+         style="width: 300px; height: auto;">
+    
+    <img src="https://previews.123rf.com/images/scofano/scofano2305/scofano230500235/203531296-rel%C3%B3gio-e-engrenagens-de-rel%C3%B3gio-no-espa%C3%A7o-fundo-abstrato-futurista-cores-vibrantes-ilustra%C3%A7%C3%A3o-tempo.jpg" 
+         alt="Relógio e Engrenagens no Espaço" 
+         style="width: 300px; height: auto;">
+        </div>
+    </div>
+</body>
+</html>

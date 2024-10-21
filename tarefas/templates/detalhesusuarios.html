@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'home_list/style.css' %}">
+    <link rel="stylesheet" href="{% static 'detalhes/estilo.css' %}">
+
+    <link rel="stylesheet" href="{% static 'nav/nav.css' %}">
+    <title>Detalhes dos Usuários</title>
+</head>
+
+<style>
+
+    /* Espaçamento entre a navbar e o conteúdo principal */
+    .main-content {
+        margin-top: 60px;
+        padding: 20px;
+    }
+    
+    /* Estilo para o título */
+    .title {
+        font-size: 28px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    /* Tabela estilo geral */
+    .user-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0 auto;
+    }
+    
+    /* Estilo para os headers da tabela */
+    .table-header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 15px;
+        text-align: left;
+    }
+    
+    /* Estilo específico para o cabeçalho */
+    thead {
+        display: table-header-group;  /* Garante que os headers da tabela sejam exibidos corretamente */
+    }
+    
+    thead th {
+        display: table-cell;  /* Faz os headers ficarem em linha com as colunas */
+    }
+    
+    /* Alternância de cor das linhas da tabela */
+    .table-row:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    
+    .table-row:hover {
+        background-color: #e0e0e0;
+    }
+    
+    /* Exibição em linha para as células da tabela */
+    .table-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    /* Definir o tamanho das colunas */
+    .user-name, .user-cpf, .task-list, .actions {
+        flex: 1;
+        text-align: left;
+        padding: 12px 15px;
+    }
+    
+    /* Estilo para as ações */
+    .actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    /* Estilo para os links e botões */
+    .edit-link {
+        color: #3498db;
+        text-decoration: none;
+        margin-right: 10px;
+        font-size: 14px;
+    }
+    
+    .edit-link:hover {
+        text-decoration: underline;
+    }
+    
+    .delete-form {
+        display: inline;
+    }
+    
+    .delete-button {
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        cursor: pointer;
+        border-radius: 4px;
+        margin-left: 10px;
+    }
+    
+    .delete-button:hover {
+        background-color: #c0392b;
+    }
+    
+    /* Estilo para a lista de tarefas */
+    .task-list ul {
+        padding-left: 20px;
+    }
+    
+    .task-item {
+        margin-bottom: 5px;
+    }
+    
+
+</style>
+<body>
+    {% include 'includs/navbar.html' %}
+    <main class="main-content">
+        <h1 class="title">Detalhes dos Usuários</h1>
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th class="table-header">Nome do Usuário</th>
+                    <th class="table-header">CPF</th>
+                   
+                    <th class="table-header">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for usuario in usuarios %}
+                    <tr class="table-row">
+                        <td class="user-name">{{ usuario.nome_user }}</td>
+                        <td class="user-cpf">{{ usuario.cpf }}</td>
+                        <td class="task-list"><p>
+                            <ul>
+                              
+                            </ul>
+                        </td>
+                        <td class="task-list">
+                            <ul>
+                                {% for tarefa in usuario.cadastrotarefas_set.all %}
+                                    <li class="task-item">
+                                        <!-- Certifique-se de que cada tarefa tem um ID válido -->
+                                        <a href="{% url 'editar_tarefa' tarefa.id %}">Editar Tarefa: {{ tarefa.titulo_tarefa }}</a>
+                                    </li>
+                                {% empty %}
+                                    <li>Sem tarefas associadas</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+</body>
+<script>
+    function confirmarDelecaoUsuario() {
+        return confirm("Tem certeza de que deseja deletar este usuário?");
+    }
+</script>
+
+</html>

@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'home_list/style.css' %}">
+    <link rel="stylesheet" href="{% static 'nav/nav.css' %}">
+    <title>Detalhes da Tarefa</title>
+</head>
+
+<body>
+    <h3>Detalhes da Tarefa</h3>
+    <div class="card_detalhe">
+        <h3>{{ cadastro_tarefa.titulo_tarefa }}</h3>
+        <p>CPF: {{ cadastro_tarefa.responsavel.cpf }}</p>
+        <p>Status Atual: {{ cadastro_tarefa.status }}</p>
+        <p>Responsável: {{ cadastro_tarefa.responsavel.nome_user }}</p>
+        <p>Data de Registro: {{ cadastro_tarefa.datadoregistro }}</p>
+        <p>Descrição: {{ cadastro_tarefa.descricao }}</p>
+    </div>
+
+    <!-- Formulário para atualizar o status -->
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }} <!-- Renderiza o formulário de atualização de status -->
+        <button type="submit">Atualizar Status</button>
+    </form>
+
+    <!-- Botão para excluir a tarefa -->
+    <form method="post" action="{% url 'excluir_tarefa' cadastro_tarefa.id %}" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" onclick="return confirm('Você tem certeza que deseja excluir esta tarefa?');">Excluir Tarefa</button>
+    </form>
+
+    <a class="butao_detalhe" href="{% url 'lista_tarefas' %}">Voltar para lista de tarefas</a>
+</body>
+</html>
